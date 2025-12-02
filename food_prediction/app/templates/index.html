@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Food Classifier</h1>
+
+        <!-- Image preview -->
+        <img id="preview" src="" alt="Preview" style="display:none;" />
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="image" name="file" accept="image/*" required />
+            <button type="submit">Predict</button>
+        </form>
+
+        <div id="result"></div>
+
+        <a href="/history" class="history-link">View Prediction History</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+flask
+flask_sqlalchemy
+flask_login
+pillow
+torch
+torchvision
+tqdm
+numpy
+pandas
+scikit-learn
+gunicorn
+kaggle
+python-multipart

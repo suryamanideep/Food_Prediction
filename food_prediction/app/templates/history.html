@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Prediction History</h1>
+
+    <table class="history-table">
+        <tr>
+            <th>Food</th>
+            <th>Confidence</th>
+            <th>Calories</th>
+            <th>Timestamp (UTC)</th>
+        </tr>
+
+        {% for p in preds %}
+        <tr>
+            <td>{{ p.label }}</td>
+            <td>{{ "%.2f"|format(p.confidence * 100) }}%</td>
+            <td>{{ p.calories }}</td>
+            <td>{{ p.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/" class="history-link">⬅ Back</a>
+</div>
+
+</body>
+</html>
